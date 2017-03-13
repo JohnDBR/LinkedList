@@ -9,24 +9,24 @@ package linkedlist;
  *
  * @author John
  */
-public class Node {
+public class Node<T> {
 
-    private int num;
+    private T info;
     private Node link;
 
-    public Node(int num) {
-        this.num = num;
+    public Node(T info) {
+        this.info = info;
     }
 
-    public int getNum() {
-        return num;
+    public T getInfo() {
+        return info;
     }
 
-    public void setNum(int num) {
-        this.num = num;
+    public void setInfo(T info) {
+        this.info = info;
     }
 
-    public Node getLink() {
+    public Node<T> getLink() {
         try {
             return link;
         } catch (Exception ex) {
@@ -34,7 +34,7 @@ public class Node {
         }
     }
 
-    public void setLink(Node link) {
+    public void setLink(Node<T> link) {
         this.link = link;
     }
 }
