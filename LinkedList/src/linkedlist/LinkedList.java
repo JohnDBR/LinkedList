@@ -116,7 +116,7 @@ public class LinkedList<T> {
         }
     }
 
-    public void addOnFirst(T info) {
+    public void addFirst(T info) {
         if (info != null) {
             Node<T> p = new Node<>(info);
             if (ptr == null) {
@@ -137,7 +137,7 @@ public class LinkedList<T> {
         }
     }
 
-    public void addOnLast(T info) {
+    public void addLast(T info) {
         if (info != null) {
             Node<T> p = new Node<>(info);
             if (ptr == null) {
@@ -194,4 +194,21 @@ public class LinkedList<T> {
         last = null;
     }
 
+    public boolean contains(T info) {
+        Node<T> p = ptr;
+        while (p != null) {
+            if (p.getInfo() == info) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void addAll(LinkedList<T> list) {
+        Node<T> pList = list.getNode(0), p;
+        for (int i = 0; i < list.size; i++) {
+            add(pList.getInfo());
+            pList = pList.getLink();
+        }
+    }
 }
