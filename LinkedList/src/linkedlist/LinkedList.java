@@ -200,6 +200,7 @@ public class LinkedList<T> {
             if (p.getInfo() == info) {
                 return true;
             }
+            p = p.getLink();
         }
         return false;
     }
